@@ -1,1 +1,46 @@
-# vue-hero-transition
+# Vue Hero Transition
+
+## Description
+
+Custom transitions between routes based on "hero" content.
+
+## Usage
+
+```javascript
+import Hero from 'vue-hero-transition';
+Vue.use(Hero);
+```
+
+Wrap your `view-router` with `HeroTransition`:
+
+```html
+<HeroTransition>
+  <router-view></router-view>
+</HeroTransition>
+```
+
+Then wrap elements on source and target routes with `Hero`. Required attribute `tag` should match:
+
+```html
+<Hero tag="tag">
+...
+</Hero>
+```
+
+## Parameters
+
+`HeroTransition` accepts the following parameters:
+
+<table>
+  <tr><th>Name</th><th>Purpose</th><th>Default</th></tr>
+  <tr>
+    <td>duration</td>
+    <td>Transition duration in CSS format</td>
+    <td>500ms</td>
+  </tr>
+</table>
+
+## TODO
+- Support for back navigation
+
+
