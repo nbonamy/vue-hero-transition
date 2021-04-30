@@ -45,7 +45,7 @@ export default {
         dest.style.visibility = 'visible';
         hero.el.remove();
         if (this.backSupport) {
-          this.$hero.prepare(tag, dest);
+          this.$hero.prepare(hero.tag, dest);
         } else {
           this.$hero.cleanup();
         }
