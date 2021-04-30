@@ -65,12 +65,6 @@ export default {
 
     },
 
-    cleanup() {
-      delete this.$hero.el;
-      this.$hero.tag = null;
-      this.$hero.el = null;
-    }
-
   }
 }
 
