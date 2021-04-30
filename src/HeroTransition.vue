@@ -10,26 +10,29 @@ export default {
     duration: {
       type: String,
       default: '500ms'
+    },
+    backSupport: {
+      type: Boolean,
+      default: true,
     }
   },
   methods: {
 
     onEnter(el, done) {
-      if (this.$hero.tag != null) {
-        this.transition(el);
-        delete this.$hero.el;
+      if (this.$hero.hero != null) {
+        if (this.transition(el, this.$hero.hero) == false) {
+          this.$hero.cleanup();
+        }
       }
-      this.$hero.tag = null;
-      this.$hero.el = null;
       done();
     },
 
-    transition(el) {
+    transition(el, hero) {
 
       // find corresponding target hero
-      let dest = el.querySelector(`.hero[tag='${this.$hero.tag}']`);
+      let dest = el.querySelector(`.hero[tag='${hero.tag}']`);
       if (dest == null) {
-        return;
+        return false;
       }
 
       // prepare destination
@@ -37,20 +40,34 @@ export default {
       dest.style.visibility = 'hidden';
 
       // now our element
-      el = this.$hero.el;
-      dest.offsetParent.appendChild(el);
-      el.addEventListener('transitionend', () => {
+      dest.offsetParent.appendChild(hero.el);
+      hero.el.addEventListener('transitionend', () => {
         dest.style.visibility = 'visible';
-        el.remove();
+        hero.el.remove();
+        if (this.backSupport) {
+          this.$hero.prepare(tag, dest);
+        } else {
+          this.$hero.cleanup();
+        }
       });
 
       // now style it
-      el.style.transition = `left ${this.duration}, top ${this.duration}, width ${this.duration}, height ${this.duration}`;
-      el.style.left = `${dest.offsetLeft}px`;
-      el.style.top = `${dest.offsetTop}px`;
-      el.style.width = `${dest.width}px`;
-      el.style.height = `${dest.height}px`;
+      hero.el.style.transition = `left ${this.duration}, top ${this.duration}, width ${this.duration}, height ${this.duration}`;
+      hero.el.style.left = `${dest.offsetLeft}px`;
+      hero.el.style.top = `${dest.offsetTop}px`;
+      hero.el.style.width = `${dest.width}px`;
+      hero.el.style.height = `${dest.height}px`;
+
+      // done
+      return true;
+
     },
+
+    cleanup() {
+      delete this.$hero.el;
+      this.$hero.tag = null;
+      this.$hero.el = null;
+    }
 
   }
 }

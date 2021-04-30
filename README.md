@@ -38,9 +38,9 @@ Then wrap elements on source and target routes with `Hero`. Required attribute `
     <td>Transition duration in CSS format</td>
     <td>500ms</td>
   </tr>
+  <tr>
+    <td>backSupport</td>
+    <td>Enable transition on router.pop</td>
+    <td>true</td>
+  </tr>
 </table>
-
-## TODO
-- Support for back navigation
-
-

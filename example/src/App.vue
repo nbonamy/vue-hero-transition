@@ -17,7 +17,7 @@ export default {
 #app {
   width: 80%;
   height: 80vh;
-  margin: 10vh auto;
+  margin: 5vh auto;
   border: 1px solid #ccc;
   background-color: white;
   border-radius: 16px;
