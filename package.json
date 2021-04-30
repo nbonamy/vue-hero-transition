@@ -4,7 +4,7 @@
   "description": "A Hero style of transition for Vuejs 2.x and router",
   "main": "src/index.js",
   "scripts": {
-    "pub": "rm -rf example/node_modules && rm -rf example/dist && npm publish"
+    "pub": "cd /tmp ; git clone https://github.com/nbonamy/vue-hero-transition ; cd vue-hero-transition ; npm publish ; rm -rf /tmp/vue-hero-transition"
   },
   "repository": {
     "type": "git",

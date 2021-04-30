@@ -4,6 +4,7 @@
 
 Custom transitions between routes based on "hero" content.
 
+Demo: [http://bonamy.fr/vue-hero-transition/](http://bonamy.fr/vue-hero-transition/#/)
 ## Usage
 
 ```javascript

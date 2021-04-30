@@ -4,7 +4,9 @@
   "description": "Example app for Vue Hero Transition",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/parcel serve index.html"
+    "start": "./node_modules/.bin/parcel serve index.html",
+    "build": "./node_modules/.bin/parcel build --public-url /vue-hero-transition index.html",
+    "upload": "ncftpput -z bonamy /vue-hero-transition/ dist/*"
   },
   "author": "nbonamy@gmail.com",
   "license": "Apache-2.0",
