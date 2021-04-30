@@ -43,7 +43,9 @@ export default {
       dest.offsetParent.appendChild(hero.el);
       hero.el.addEventListener('transitionend', () => {
         dest.style.visibility = 'visible';
-        hero.el.remove();
+        if (hero.el != null) {
+          hero.el.remove();
+        }
         if (this.backSupport) {
           this.$hero.prepare(hero.tag, dest);
         } else {

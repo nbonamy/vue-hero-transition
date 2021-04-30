@@ -39,7 +39,9 @@ export default {
       },
 
       cleanup: function() {
-        delete this.hero?.el;
+        if (this.hero != null) {
+          delete this.hero.el;
+        }
         this.hero = null;
       }
     };
