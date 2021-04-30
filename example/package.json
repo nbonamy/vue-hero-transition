@@ -1,6 +1,6 @@
 {
   "name": "vue-hero-transition-example",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Example app for Vue Hero Transition",
   "main": "index.js",
   "scripts": {

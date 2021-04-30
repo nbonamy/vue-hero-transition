@@ -1,10 +1,10 @@
 {
   "name": "vue-hero-transition",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A Hero style of transition for Vuejs 2.x and router",
   "main": "src/index.js",
   "scripts": {
-    "pub": "rm -rf example/node_modules && npm publish"
+    "pub": "rm -rf example/node_modules && rm -rf example/dist && npm publish"
   },
   "repository": {
     "type": "git",
