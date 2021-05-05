@@ -55,8 +55,8 @@ export default {
 
       // now style it
       hero.el.style.transition = `left ${this.duration}, top ${this.duration}, width ${this.duration}, height ${this.duration}`;
-      hero.el.style.left = `${dest.offsetLeft}px`;
-      hero.el.style.top = `${dest.offsetTop}px`;
+      hero.el.style.left = `${dest.getBoundingClientRect().left}px`;
+      hero.el.style.top = `${dest.getBoundingClientRect().top}px`;
       hero.el.style.width = `${dest.width}px`;
       hero.el.style.height = `${dest.height}px`;
 
