@@ -25,7 +25,7 @@ export default {
         {
           tag: 'cassius',
           name: 'Cassius',
-          src: 'https://im.ra.co/images/profiles/square/cassius.jpg',
+          src: 'https://futuredisco.net/wp-content/uploads/2022/03/cassius-300x300.jpg',
           desc: 'Cassius was a French musical duo consisting of producers Philippe Cerboneschi and Hubert Blanc-Francard, better known as Zdar and Boombass',
         }
       ]
